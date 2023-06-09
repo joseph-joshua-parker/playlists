@@ -32,7 +32,13 @@ const songSlice = createSlice({
 		removeSong(state, action){
 			const index = state.indexOf(action.payload);
 			state.splice(index, 1);
-		}
+		},
+	},
+
+	extraReducers(builder){
+		builder.addCase(movieSlice.actions.reset, ()=>{
+			return [];
+		})
 	}
 });
 
